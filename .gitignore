@@ -1,7 +1,7 @@
 .metadata
 bin/
 tmp/
-target/
+/target/
 .classpath
 .gitattributes
 .project
