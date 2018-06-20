@@ -14,18 +14,22 @@ import java.util.Map;
 public class FileUtils {
 
 	
-	public static void createJavaFiles(Map<String, String> sources, String dirPath) {
-		createDir(dirPath);
-		
+	public static void createJavaFiles(String commit,Map<String, String> sources, String dirPath) {
+		createDir(dirPath + File.separator + commit);
+		String commitDir = dirPath + File.separator + commit;
 		sources.forEach((className,source)->{
-			Path file = Paths.get(dirPath + File.separator + className);
-			try {
-				Files.write(file, new ArrayList<String>(Arrays.asList(source)), Charset.forName("UTF-8"));
-			} catch (IOException e) {
-				e.printStackTrace();
+			if(className.contains(".java")) {
+				int index = className.lastIndexOf("/");
+				if(index != -1)
+					className = className.substring(index+1);
+				Path file = Paths.get(commitDir + File.separator + className);
+				try {
+					Files.write(file, new ArrayList<String>(Arrays.asList(source)), Charset.forName("UTF-8"));
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		});
-
 	}
 	
 	private static void createDir(String dirPath) {

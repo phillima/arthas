@@ -12,14 +12,11 @@ import org.repodriller.filter.range.Commits;
 import org.repodriller.persistence.csv.CSVFile;
 import org.repodriller.scm.GitRepository;
 
-import br.inpe.cap.arthas.utils.FileUtils;
-import br.inpe.cap.asniffer.AMReport;
 import br.inpe.cap.asniffer.ASniffer;
-import br.inpe.cap.asniffer.MetricResult;
 
 public class ArthasStudy implements Study {
 
-	private static ASniffer aSniffer;
+	private static ASniffer aSniffer = null;
 	
 	public static void main(String[] args) {
 		aSniffer = new ASniffer();
@@ -29,40 +26,12 @@ public class ArthasStudy implements Study {
 	@Override
 	public void execute() {
 		
-		Map<String,Integer> acValues = new LinkedHashMap<>();
-		int acValue = 0;
-		
 		DeveloperVisitor devVisitor = new DeveloperVisitor();
 		new RepositoryMining()
-		    .in(GitRepository.allProjectsIn("/Users/phillima/Documents/Arthas-Tool/projects/"))
+		    .in(GitRepository.singleProject("C:\\Users\\phyll\\Documents\\eclipse-workspace\\EsfingeMetaDATA"))
 			.through(Commits.all())
-			.process(devVisitor, new CSVFile("/Users/phillima/Desktop/arthasstudy.csv"))
+			.process(devVisitor, new CSVFile("C:\\Users\\phyll\\Documents\\eclipse-workspace\\MiningRes\\res.csv"))
 			.mine();
 		System.out.println("FINISHED");
-		
-		Map<String, Map<String,String>> sources = devVisitor.getSources();
-		
-		sources.forEach((commit, source)->{
-			FileUtils.createJavaFiles(source, "/Users/phillima/Desktop/Arthas/"+commit);
-		});
-		
-		devVisitor.getSources();
-		
-		/*List<AMReport> reports;
-		try {
-			reports = aSniffer.run("/Users/phillima/Desktop/Arthas/", "/Users/phillima/Desktop/Arthas/", false);
-			for (AMReport amReport : reports) {
-
-				for (MetricResult metric : amReport.all()) {
-					acValue+=metric.getClassMetric("AC");
-				}
-				acValues.put(amReport.getProjectName(),acValue);
-			}
-			acValues.forEach((commit,metric)->{
-				System.out.println("Commit: " + commit + " has AC=" + metric);
-			});
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}*/
 	}
 }
