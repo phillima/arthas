@@ -11,7 +11,7 @@ authors:
         affiliation: 1
 affiliations:
     - name: CDG, National Institute of Telecommunications - INATEL, Brazil
-        index: 1
+    index: 1
 date: 23 November 2019
 bibliography: paper.bib
 ---
