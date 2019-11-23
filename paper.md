@@ -8,12 +8,10 @@ tags:
 authors:
   -name: Phyllipe Lima
         orcid: 0000-0002-8358-4405
-        affiliation: "1, 2"
+        affiliation: 1
 affiliations:
     - name: CDG, National Institute of Telecommunications - INATEL, Brazil
         index: 1
-    - name: LAC, National Institute for Space Research - INPE, Brazil
-        index: 2
 date: 23 November 2019
 bibliography: paper.bib
 ---
