@@ -1,18 +1,16 @@
 ---
-title: 'Eyestream: An Open WebSocket-based Middleware for Serializing and Streaming Eye Tracker Event Data from Gazepoint GP3 HD Research Hardware'
+title: 'Annotation Sniffer: An Open Source Tool for Code Annotation Metrics'
 tags:
-  - Python
-  - eye tracker
-  - Gazepoint 
-  - websocket
-  - JSON
-  - streaming
+  - Java
+  - metadata
+  - code annotations 
+  - software-enginering
 authors:
-  - name: Matthew L. Hale
-    orcid: 0000-0002-8433-2744
+  - name: Phyllipe Lima
+    orcid: 0000-0002-8358-4405
     affiliation: 1
 affiliations:
- - name: School of Interdisciplinary Informatics, University of Nebraska at Omaha
+ - name: CDG, National Institute of Telecommunications - INATEL, Brazil
    index: 1
 date: 21 April 2019
 bibliography: paper.bib
