@@ -73,6 +73,8 @@ Another important definition is that of an annotation schema [@LIMA2018], define
 
 # Annotation Metrics
 
+In this section we briefly present the code annotation metrics proposed ou our previous work [@LIMA2018]. The code below will be used as an example to demonstrate how the metrics value are extracted.
+
 ```java
 import javax.persistence.AssociationOverrides;
 import javax.persistence.AssociationOverride;
@@ -123,6 +125,8 @@ public class Example {...
 - Number of Elements (NEC): This metric measures the number of elements that can be annotated in a class, i.e., the number of programming elements that can potentially be configured with code annotations. In the example class we have three methods, \texttt{exampleMethodA}, \texttt{exampleMethodB} and \texttt{exampleMethodC}, and the class declaration \texttt{Example}. Hence we have an NEC value of four.
 
 # Annotation Sniffer 
+
+
 
 # License 
 Annotation Sniffer is licensed under the GNU Lesser General Public License v3.0
