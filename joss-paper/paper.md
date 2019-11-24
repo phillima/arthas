@@ -75,9 +75,9 @@ Another important definition is that of an annotation schema [@LIMA2018], define
 # Annotation Metrics
 
 Our work in [@LIMA2018] proposed a novel suite of software metrics dedicated to code annotations. In this section we briefly describe them and demonstrate how they are calculated. We have three categories of metrics.
-  * Class Metric: Outputs one value per class.
-  * Code Element Metric: Outputs one value per code element (fields, methods, etc.).
-  * Annotation Metric: Outputs one value per code annotation.
+- Class Metric: Outputs one value per class.
+- Code Element Metric: Outputs one value per code element (fields, methods, etc.).
+- Annotation Metric: Outputs one value per code annotation.
 
 The code presented on Listing 2 will be used as an example. 
 
@@ -163,9 +163,9 @@ public class AC extends ASTVisitor implements IClassMetricCollector{
 Following is the command line to run the ASniffer:
 
 ```java -jar asniffer.jar <path to project> <path to xml report> <single/multi>}```
- * The first parameter is the path to where the source code to be analyzed is stored.
- * The second parameter is the path to where you wish to store the generated XML report.
- * The third parameter tells the ASniffer whether the <path to project> contains only one or several java projects.
+- The first parameter is the path to where the source code to be analyzed is stored.
+- The second parameter is the path to where you wish to store the generated XML report.
+- The third parameter tells the ASniffer whether the <path to project> contains only one or several java projects.
 
 # License 
 Annotation Sniffer is licensed under the GNU Lesser General Public License v3.0
