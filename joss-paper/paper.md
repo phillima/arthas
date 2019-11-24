@@ -43,11 +43,6 @@ The first version of this tool was previously presented and published on a works
 
 The term `metadata` is used in a variety of contexts in the computer science field. In all of them, it means data referring to the data itself. In databases, the data are the ones persisted, and the metadata is their description, i.e., the structure of the table. In the object-oriented context, the data are the instances, and the metadata is their description, i.e., information that describes the class. As such, fields, methods, super-classes, and interfaces are all metadata of a class instance. A class field, in turn, has its type, access modifiers, and name as its metadata [@guerra2014]. 
 
-The class structure might not be enough to allow a specific behavior or routine to be executed, and therefore additional metadata can be configured on the programming elements. Afterward, a framework or tool consumes them and executes the desired behavior. For instance, metadata can be used to generate source code [@Damyanov2004], compile-time verification [@Ernst2008], framework adaptation [@Guerra2010a], perform object-relational mapping[^1], object-XML mapping[^2] and so forth.
-
-[^1]:\url{jcp.org/en/jsr/detail?id=220}
-[^2]:\url{jcp.org/en/jsr/detail?id=222}
-
 Some programming languages provide features that allow custom metadata to be defined and included directly on programming elements. This feature is supported in languages such as Java, through the use of annotations and in C# #, by attributes. A benefit is that the metadata definition is closer to the programming element, and its definition is less verbose than external approaches. Annotations are a feature of the Java language, which became official on version 1.5. The code on Listing 1 presents a simple ```Player``` class using code annotation to perform object-relational mapping.
 
 
@@ -80,9 +75,9 @@ Another important definition is that of an annotation schema [@LIMA2018], define
 # Annotation Metrics
 
 Our work in [@LIMA2018] proposed a novel suite of software metrics dedicated to code annotations. In this section we briefly describe them and demonstrate how they are calculated. We have three categories of metrics.
-  - Class Metric: Outputs one value per class.
-  - Code Element Metric: Outputs one value per code element (fields, methods, etc.).
-  - Annotation Metric: Outputs one value per code annotation.
+  * Class Metric: Outputs one value per class.
+  * Code Element Metric: Outputs one value per code element (fields, methods, etc.).
+  * Annotation Metric: Outputs one value per code annotation.
 
 The code presented on Listing 2 will be used as an example. 
 
@@ -168,9 +163,9 @@ public class AC extends ASTVisitor implements IClassMetricCollector{
 Following is the command line to run the ASniffer:
 
 ```java -jar asniffer.jar <path to project> <path to xml report> <single/multi>}```
- - The first parameter is the path to where the source code to be analyzed is stored.
- - The second parameter is the path to where you wish to store the generated XML report.
- - The third parameter tells the ASniffer whether the <path to project> contains only one or several java projects.
+ * The first parameter is the path to where the source code to be analyzed is stored.
+ * The second parameter is the path to where you wish to store the generated XML report.
+ * The third parameter tells the ASniffer whether the <path to project> contains only one or several java projects.
 
 # License 
 Annotation Sniffer is licensed under the GNU Lesser General Public License v3.0
