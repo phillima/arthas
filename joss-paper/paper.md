@@ -66,8 +66,6 @@ Listing 1: Code Annotations Example
 
 To map this ```Player``` class to a table in a database, to store the player's information, we need to pass in some `extra information` about these code elements. In other words, we need to define an object-relational mapping, and we need to configure which elements should be mapped to a column, table, and so forth. Using code annotations provided by the JPA API, this mapping is easily achieved. When this code gets executed, the framework consuming the annotations knows how to perform the expected behavior. 
 
-Another important definition is that of an annotation schema [@LIMA2018], defined as a set of associated annotations that belong to the same API. The annotations used in the example code are part of the JPA schema. An annotation-based API usually uses a group of related annotations that represent the set of metadata necessary for its usage.
-
 # Annotation Metrics
 
 Our work in [@LIMA2018] proposed a novel suite of software metrics dedicated to code annotations. In this section we briefly describe them and demonstrate how they are calculated. We have three categories of metrics:
@@ -158,15 +156,13 @@ public class AC extends ASTVisitor implements IClassMetricCollector{
 Following is the command line to run the ASniffer:
 
 ```java -jar asniffer.jar <path to project> <path to xml report> <single/multi>}```
-- The first parameter is the path to where the source code to be analyzed is stored.
-- The second parameter is the path to where you wish to store the generated XML report.
+
 - The third parameter tells the ASniffer whether the <path to project> contains only one or several java projects.
 
 # License 
 Annotation Sniffer is licensed under the GNU Lesser General Public License v3.0
 
 # Acknowledgements
-
 This work is supported by FAPESP (Fundação de Amparo à Pequisa do Estado de São Paulo), grant 2014/16236-6 and CAPES (Coordenação de Aperfeiçoamento de Pessoal de Nível Superior )
 
 # References
