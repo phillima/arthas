@@ -10,19 +10,16 @@ authors:
   - name: Phyllipe Lima
     orcid: 0000-0002-8358-4405
     affiliation: "1,2"
-  - name: Eduardo Guerra
-    orcid: 0000-0001-5555-3487
-    affilitation: 1
   - name: Paulo Meirelles
     orcid: 0000-0002-8923-2814 
     affilitation: 3
 affiliations:
  - name: CDG, National Institute of Telecommunications - INATEL, Brazil
-    index: 1
+   index: 1
  - name: LAC, National Institute for Space Research - INPE, Brazil
-    index: 2
+   index: 2
  - name: DIS, Federal University of São Paulo - UNIFESP, Brazil
-    index: 3
+   index: 3
 date: 24 Novembrt 2019
 bibliography: paper.bib
 ---
