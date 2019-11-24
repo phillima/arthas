@@ -73,6 +73,23 @@ public class Example {...
 }
 
 ```
+- Annotations in Class (AC): This metric counts the number of annotations declared on all code elements in a class, including nested annotations. In our example code, the value of AC is equal to 11. 
+
+- Unique Annotations in Class (UAC): While AC counts all annotations, even repeated ones, UAC counts only distinct annotations. Two annotations are equal if they have the same name, and all arguments match. For instance, the annotation \texttt{@AssociationOverride} on line 10 is different from the one on line 12, for they have a nested annotation \texttt{@JoinColumn} that have different arguments. The first is \texttt{EX\_ID} while the latter is \texttt{O\_ID}. Hence they are distinct annotations and will be computed separately. The UAC value for the example class is nine. Notice that the annotations on lines 21, 25, and 28 are calculated only once for they are equal.
+
+- Annotations Schemas in Class (ASC): An annotation schema represents a set of related annotations provided by a framework or tool. This measures how coupled a class is to a framework since different schemas on a class imply the class is using different frameworks. This value is obtained by tracking the imports used for the annotations. On the example code, the ASC value is two. The import \texttt{javax.persistence} is a schema provided by the JPA, and the import \texttt{javax.ejb} is provided by EJB.
+
+- Arguments in Annotations (AA): Annotations may contain arguments. They can be a string, integer, or even another annotation. The AA metric counts the number of arguments contained in the annotation. For each annotation in the class, an AA value will be generated. For example, on line nine the \texttt{@AssociationOverrides} has only one argument ``\texttt{value}'', so the AA value is equal one. But \texttt{@AssociationOverride}, on line 10, contains two arguments, \texttt{name} and \texttt{joinColumns}, so the AA value is two. 
+
+- Annotations in Element Declaration (AED): The AED metric counts how many annotations are declared in each code element, including nested annotations. In the example code, line 23, the method \texttt{exampleMethodA} has an AED value of two, it has the \texttt{@TransactionAttribute} and \texttt{@DiscriminatorColumn}
+
+- Annotation Nesting Level (ANL): Annotations can have other annotations as arguments, which translates into nested annotations. ANL measures how deep an annotation is nested. The root level is considered value zero. The annotations \texttt{@Stateless} on line 18 has ANL value of zero, while \\
+\texttt{@JoinColumn} on line 11 has ANL equals two. This data is because it has \texttt{@AssociationOverride}, line 10, as a first level, and then the \texttt{@AssociationOverrides}, line nine, adds another nesting level, hence the value ANL is two.
+
+- LOC in Annotation Declaration (LOCAD): LOC (Line of Code), is a well-known metric that counts the number of code lines. The LOCAD is proposed as a variant of LOC that counts the number of lines used in an annotation declaration. \texttt{@AssociationOverrides} on line nine has a LOCAD value of five, while \texttt{@NamedQuery}, line 14, has LOCAD equals four.
+
+- Number of Elements (NEC): This metric measures the number of elements that can be annotated in a class, i.e., the number of programming elements that can potentially be configured with code annotations. In the example class we have three methods, \texttt{exampleMethodA}, \texttt{exampleMethodB} and \texttt{exampleMethodC}, and the class declaration \texttt{Example}. Hence we have an NEC value of four.
+
 
 # Annotation Sniffer 
 
@@ -81,6 +98,6 @@ Annotation Sniffer is licensed under the GNU Lesser General Public License v3.0
 
 # Acknowledgements
 
-We acknowledge contributions by Gabi Wethor ([gewethor on GitHub](https://github.com/gewethor)) for her work in testing the installation and usage instructions.
+This work is supported by FAPESP (Fundação de Amparo à Pequisa do Estado de São Paulo), grant 2014/16236-6 and CAPES (Coordenação de Aperfeiçoamento de Pessoal de Nível Superior )
 
 # References
