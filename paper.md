@@ -9,7 +9,10 @@ tags:
 authors:
   - name: Phyllipe Lima
     orcid: 0000-0002-8358-4405
-    affiliation: "1, 2" #
+    affiliation: "1,2" #
+  - name: Phyllipe Lima
+    orcid: 0000-0002-8358-4405
+    affiliation: "1,2" #
 affiliations:
  - name: CDG, National Institute of Telecommunications - INATEL, Brazil
    index: 1
