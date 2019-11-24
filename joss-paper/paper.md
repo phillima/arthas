@@ -28,11 +28,11 @@ bibliography: paper.bib
 ---
 
 # Summary
-Enterprise Java frameworks and APIs such as JPA (Java Persistence API), Spring, EJB (Enterprise Java Bean), and JUnit make extensive use of code annotations as means to allow applications to configure custom metadata and execute specific behavior. Observing the top 30 ranked Java projects on GitHub, they have, on average, 76% of classes with at least one annotation. Some projects may have more than 90% of its classes annotated. To measure code annotations usage and analyze their distribution, our previous work [@LIMA2018] proposed a novel suite of software metrics dedicated to code annotations. To obtain threshold values, the Percentile Rank Analysis approach was used [@meirelles2013]. 
+Enterprise Java frameworks and APIs such as JPA (Java Persistence API), Spring, EJB (Enterprise Java Bean), and JUnit make extensive use of code annotations as means to allow applications to configure custom metadata and execute specific behavior. Observing the top 30 ranked Java projects on GitHub, they have, on average, 76% of classes with at least one annotation. Some projects may have more than 90% of its classes annotated. To measure code annotations usage and analyze their distribution, our work in [@LIMA2018] proposed a novel suite of software metrics dedicated to code annotations. To obtain threshold values, the Percentile Rank Analysis approach was used [@meirelles2013]. 
 
 Source code metrics retrieve information from software to assess its characteristics. Well-known techniques use metrics associated with rules to detect bad smells on the source code [@Lanza2006]. However, traditional code metrics does not recognize code annotations on programming elements, which can lead to an incomplete code assessment [@Guerra2009]. For instance, a domain class can be considered simple using current complexity metrics. However, it can contain complex annotations for object-XML mapping. Also, using a set of annotations couples the application to a framework that can interpret them and current coupling metrics does not explicitly handle this.
 
-To automate the process of extracting the novel suite of software metrics for code annotation in [@LIMA2018], we developed an open source tool called Annotation Sniffier (`ASniffer`). It is a command line tool that reads java source code, extract the metrics values and ouputs an XML report. Potential `ASniffer` users are software engineers or researchers interested in static code analysis and mining software repositories. Additionally, given that it is an extensible tool, other developers can implement their own metrics and integrate them in the extraction process. Figure 1 presents a simple diagram of the ASniffer tool.
+To automate the process of extracting the novel suite of software metrics for code annotation in [@LIMA2018], we developed an open source tool called Annotation Sniffer (`ASniffer`). It is a command line tool that reads java source code, extract the metrics values and ouputs an XML report. Potential `ASniffer` users are software engineers or researchers interested in static code analysis and mining software repositories. Additionally, given that it is an extensible tool, other developers can implement their own metrics and integrate them in the extraction process. Figure 1 presents a simple diagram of the ASniffer tool.
 
 ![ASniffer Simple Diagram](figures/asniffer.png)
 Figure 1: ASniffer Simple Diagram
@@ -43,7 +43,7 @@ The first version of this tool was previously presented and published on a works
 
 The term `metadata` is used in a variety of contexts in the computer science field. In all of them, it means data referring to the data itself. In databases, the data are the ones persisted, and the metadata is their description, i.e., the structure of the table. In the object-oriented context, the data are the instances, and the metadata is their description, i.e., information that describes the class. As such, fields, methods, super-classes, and interfaces are all metadata of a class instance. A class field, in turn, has its type, access modifiers, and name as its metadata [@guerra2014]. 
 
-The class structure might not be enough to allow a specific behavior or routine to be executed, and therefore additional metadata can be configured on the programming elements. Afterward, a framework or tool consumes them and executes the desired behavior. For instance, metadata can be used to generate source code [@Damyanov2004], compile-time verification [@Ernst2008], framework adaptation [@Guerra2010a], perform object-relational mapping[^1], object-XML mapping[ˆ2] and so forth.
+The class structure might not be enough to allow a specific behavior or routine to be executed, and therefore additional metadata can be configured on the programming elements. Afterward, a framework or tool consumes them and executes the desired behavior. For instance, metadata can be used to generate source code [@Damyanov2004], compile-time verification [@Ernst2008], framework adaptation [@Guerra2010a], perform object-relational mapping[^1], object-XML mapping[^2] and so forth.
 
 [^1]:\url{jcp.org/en/jsr/detail?id=220}
 [ˆ2]:\url{jcp.org/en/jsr/detail?id=222}
@@ -79,10 +79,10 @@ Another important definition is that of an annotation schema [@LIMA2018], define
 
 # Annotation Metrics
 
-Our work in [@Lima2018] proposed a novel suite of software metrics dedicated to code annotations. In this section we briefly describe them and demonstrate how they are calculated. We have three categories of metrics.
-- Class Metric: Outputs one value per class.
-- Code Element Metric: Outputs one value per code element (fields, methods, etc.).
-- Annotation Metric: Outputs one value per code annotation.
+Our work in [@LIMA2018] proposed a novel suite of software metrics dedicated to code annotations. In this section we briefly describe them and demonstrate how they are calculated. We have three categories of metrics.
+  - Class Metric: Outputs one value per class.
+  - Code Element Metric: Outputs one value per code element (fields, methods, etc.).
+  - Annotation Metric: Outputs one value per code annotation.
 
 The code presented on Listing 2 will be used as an example. 
 
@@ -171,7 +171,7 @@ Following is the command line to run the ASniffer:
  - The first parameter is the path to where the source code to be analyzed is stored.
  - The second parameter is the path to where you wish to store the generated XML report.
  - The third parameter tells the ASniffer whether the <path to project> contains only one or several java projects.
- 
+
 # License 
 Annotation Sniffer is licensed under the GNU Lesser General Public License v3.0
 
