@@ -42,9 +42,7 @@ The term `metadata` is used in a variety of contexts in the computer science fie
 
 The class structure might not be enough to allow a specific behavior or routine to be executed, and therefore additional metadata can be configured on the programming elements. Afterward, a framework or tool consumes them and executes the desired behavior. For instance, metadata can be used to generate source code, compile-time verification, framework adaptation [@Guerra2010a], perform object-relational mapping, object-XML mapping and so forth.
   
-Custom metadata can be configured using external storage, such as a database or an XML file~\cite{Fernandes2010}. This approach adds verbosity to the system since it is necessary to inform a complete path between the referenced element and its metadata. Another alternative is to define code conventions. Developing with this method can be productive; however, it is limited when it comes to configuring more complex metadata. For this reason, some programming languages provide features that allow custom metadata to be defined and included directly on programming elements. This feature is supported in languages such as Java, through the use of annotations and in C# #, by attributes. A benefit is that the metadata definition is closer to the programming element, and its definition is less verbose than external approaches. Also, the metadata is being explicitly defined in the source code as opposed to code convention approaches. 
 
-Annotations are a feature of the Java language, which became official on version 1.5, spreading, even more, the use of this technique in the development community. Some base APIs, starting in Java EE 5, like EJB 3.0 and JPA, use metadata in the form of annotations extensively. This native support to annotations encourages many Java frameworks and API developers to adopt the metadata-based approach in their solutions. They were also a response to the tendency of keeping the metadata files inside the source code itself, instead of using separate files \citep{CORDOBASANCHEZ2016}.
 
 ```java
 @Entity
@@ -67,10 +65,10 @@ public class Player {
 }
 ```
 
-Consider the code on Figure \ref{fig:exampleClass}. It is a simple Java class representing a player from a video game code. To map this class to a table in a database, to store the player's information, we need to pass in some ``extra information'' about these code elements. In other words, we need to define an object-relational mapping, and we need to configure which elements should be mapped to a column, table, and so forth. Using code annotations provided by the JPA API, this mapping is easily achieved. When this code gets executed, the framework consuming the annotations knows how to perform the expected behavior, which occurs as described below:
+Consider the code on Figure. It is a simple Java class representing a player from a video game code. To map this class to a table in a database, to store the player's information, we need to pass in some `extra information` about these code elements. In other words, we need to define an object-relational mapping, and we need to configure which elements should be mapped to a column, table, and so forth. Using code annotations provided by the JPA API, this mapping is easily achieved. When this code gets executed, the framework consuming the annotations knows how to perform the expected behavior, which occurs as described below:
 
 
-Another important definition is that of an annotation schema~\cite{anom2019}, defined as a set of associated annotations that belong to the same API. The annotations used in the example code are part of the JPA schema, with the exception of \texttt{@Component}, which belongs to the Spring framework. An annotation-based API usually uses a group of related annotations that represent the set of metadata necessary for its usage.
+Another important definition is that of an annotation schema [@LIMA2018], defined as a set of associated annotations that belong to the same API. The annotations used in the example code are part of the JPA schema, with the exception of \texttt{@Component}, which belongs to the Spring framework. An annotation-based API usually uses a group of related annotations that represent the set of metadata necessary for its usage.
 
 
 # Annotation Metrics
