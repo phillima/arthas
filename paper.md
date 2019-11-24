@@ -13,6 +13,9 @@ authors:
   - name: Eduardo Guerra
     orcid: 0000-0001-5555-3487
     affiliation: "2" #
+  - name: Paulo Meirelles
+    orcid: 0000-0002-8923-2814
+    affiliation: "3"
 affiliations:
  - name: CDG, National Institute of Telecommunications - INATEL, Brazil
    index: 1
