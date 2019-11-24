@@ -36,7 +36,8 @@ To automate the process of extracting the code annotation metrics, we developed 
 
 Previous work [@LIMA2018c]
 
-Figures can be included like this: ![ASniffer Simple Diagram](figures/asniffer.png)
+![ASniffer Simple Diagram](figures/asniffer.png)
+Figure 1: ASniffer Simple Diagram
 
 # Metadata and Code Annotations
 
