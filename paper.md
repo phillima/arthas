@@ -18,11 +18,11 @@ authors:
     affilitation: 3
 affiliations:
  - name: CDG, National Institute of Telecommunications - INATEL, Brazil
-   index: 1
+    index: 1
  - name: LAC, National Institute for Space Research - INPE, Brazil
-   index: 2
+    index: 2
  - name: DIS, Federal University of São Paulo - UNIFESP, Brazil
-   index: 3
+    index: 3
 date: 24 Novembrt 2019
 bibliography: paper.bib
 ---
