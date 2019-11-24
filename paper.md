@@ -8,12 +8,12 @@ tags:
    - source-code-analysis
 authors:
   - name: Phyllipe Lima
-    orcid: 0000-0002-8433-2744
+    orcid: 0000-0002-8358-4405
     affiliation: 1
 affiliations:
- - name: School of Interdisciplinary Informatics, University of Nebraska at Omaha
+ - name: CDG, National Institute of Telecommunications - INATEL
    index: 1
-date: 21 April 2019
+date: 24 Novembrt 2019
 bibliography: paper.bib
 ---
 
