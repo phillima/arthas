@@ -12,7 +12,7 @@ authors:
     affiliation: "1,2"
   - name: Eduardo Guerra
     orcid: 0000-0001-5555-3487
-    affilitation: 2
+      affilitation: 2
   - name: Paulo Meirelles
     orcid: 0000-0002-8923-2814 
     affilitation: 3
