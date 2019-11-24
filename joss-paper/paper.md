@@ -32,12 +32,14 @@ Enterprise Java frameworks and APIs such as JPA (Java Persistence API), Spring, 
 
 Source code metrics retrieve information from software to assess its characteristics. Well-known techniques use metrics associated with rules to detect bad smells on the source code [@Lanza2006]. However, traditional code metrics does not recognize code annotations on programming elements, which can lead to an incomplete code assessment [@Guerra2009]. For instance, a domain class can be considered simple using current complexity metrics. However, it can contain complex annotations for object-XML mapping. Also, using a set of annotations couples the application to a framework that can interpret them and current coupling metrics does not explicitly handle this.
 
-To automate the process of extracting the code annotation metrics, we developed an open source tool called Annotation Sniffier (ASniffer). It obtains the metrics values and outputs them in an XML report. The goal of this paper is to present this novel tool, since no other similar was found.
-
-Previous work [@LIMA2018c]
+To automate the process of extracting the code annotation metrics proposed in [@LIMA2018], we developed an open source tool called Annotation Sniffier (ASniffer). It obtains the metrics values and outputs them in an XML report. The is run through the command line and requires three par
 
 ![ASniffer Simple Diagram](figures/asniffer.png)
 Figure 1: ASniffer Simple Diagram
+
+The first version of this tool was previously presented and published on a workshop[@LIMA2018c]. The current version has an improved extensability mechanism as well as a more compact and complete report.
+
+
 
 # Metadata and Code Annotations
 
@@ -48,7 +50,6 @@ The class structure might not be enough to allow a specific behavior or routine 
 ```java
 @Entity
 @Table(name="Players")
-@Component //Used by Spring Framework
 public class Player {
     
     @Id
@@ -65,16 +66,16 @@ public class Player {
     //getters and setters omitted
 }
 ```
+Listing 1: Code Annotations Example
 
-Consider the code on Figure. It is a simple Java class representing a player from a video game code. To map this class to a table in a database, to store the player's information, we need to pass in some `extra information` about these code elements. In other words, we need to define an object-relational mapping, and we need to configure which elements should be mapped to a column, table, and so forth. Using code annotations provided by the JPA API, this mapping is easily achieved. When this code gets executed, the framework consuming the annotations knows how to perform the expected behavior, which occurs as described below:
+Consider the code on Listing 1. It is a simple Java class representing a player from a video game code. To map this class to a table in a database, to store the player's information, we need to pass in some `extra information` about these code elements. In other words, we need to define an object-relational mapping, and we need to configure which elements should be mapped to a column, table, and so forth. Using code annotations provided by the JPA API, this mapping is easily achieved. When this code gets executed, the framework consuming the annotations knows how to perform the expected behavior, which occurs as described below:
 
-
-Another important definition is that of an annotation schema [@LIMA2018], defined as a set of associated annotations that belong to the same API. The annotations used in the example code are part of the JPA schema, with the exception of \texttt{@Component}, which belongs to the Spring framework. An annotation-based API usually uses a group of related annotations that represent the set of metadata necessary for its usage.
+Another important definition is that of an annotation schema [@LIMA2018], defined as a set of associated annotations that belong to the same API. The annotations used in the example code are part of the JPA schema. An annotation-based API usually uses a group of related annotations that represent the set of metadata necessary for its usage.
 
 
 # Annotation Metrics
 
-In this section we briefly present the code annotation metrics proposed ou our previous work [@LIMA2018]. The code below will be used as an example to demonstrate how the metrics value are extracted.
+In this section we briefly present the code annotation metrics proposed ou our previous work [@LIMA2018]. The code presented on Listing 2 will be used as an example to demonstrate how the metrics value are extracted.
 
 ```java
 import javax.persistence.AssociationOverrides;
@@ -107,8 +108,9 @@ public class Example {...
    @TransactionAttribute(SUPPORTS)
    public String exampleMethodC(){...}
 }
-
 ```
+Listing 2: Example code to extract annotation metrics.
+
 - Annotations in Class (AC): This metric counts the number of annotations declared on all code elements in a class, including nested annotations. In our example code, the value of AC is equal to 11. 
 
 - Unique Annotations in Class (UAC): While AC counts all annotations, even repeated ones, UAC counts only distinct annotations. Two annotations are equal if they have the same name, and all arguments match. For instance, both annotations \texttt{@AssociationOverride} are different, for they have a nested annotation \texttt{@JoinColumn} that have different arguments. The first is \texttt{EX\_ID} while the latter is \texttt{O\_ID}. Hence they are distinct annotations and will be computed separately. The UAC value for the example class is nine. Note that the annotaiton \texttt{@TransactionAttribute()} is counted only once.
