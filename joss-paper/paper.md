@@ -106,13 +106,11 @@ public class Example {...
    @TransactionAttribute(SUPPORTS)
    public String exampleMethodB(){...}
 
-   @TransactionAttribute(SUPPORTS)
-   public String exampleMethodC(){...}
 }
 ```
 Listing 2: Example code to extract annotation metrics.
 
-- Annotations in Class (AC): This metric counts the number of annotations declared on all code elements in a class, including nested annotations. In our example code, the value of AC is equal to 11. It is a ```Class Metric```.
+- Annotations in Class (AC): This metric counts the number of annotations declared on all code elements in a class, including nested annotations. In our example code, the value of AC is equal to 10. It is a ```Class Metric```.
 
 - Unique Annotations in Class (UAC): While AC counts all annotations, even repeated ones, UAC counts only distinct annotations. Two annotations are equal if they have the same name, and all arguments match. For instance, both annotations \texttt{@AssociationOverride} are different, for they have a nested annotation \texttt{@JoinColumn} that have different arguments. The first is \texttt{EX\_ID} while the latter is \texttt{O\_ID}. Hence they are distinct annotations and will be computed separately. The UAC value for the example class is nine. Note that the annotaiton \texttt{@TransactionAttribute()} is counted only once. It is a ```Class Metric```.
 
