@@ -43,8 +43,10 @@ The first version of this tool was previously presented and published on a works
 
 The term `metadata` is used in a variety of contexts in the computer science field. In all of them, it means data referring to the data itself. In databases, the data are the ones persisted, and the metadata is their description, i.e., the structure of the table. In the object-oriented context, the data are the instances, and the metadata is their description, i.e., information that describes the class. As such, fields, methods, super-classes, and interfaces are all metadata of a class instance. A class field, in turn, has its type, access modifiers, and name as its metadata [@guerra2014]. 
 
-The class structure might not be enough to allow a specific behavior or routine to be executed, and therefore additional metadata can be configured on the programming elements. Afterward, a framework or tool consumes them and executes the desired behavior. For instance, metadata can be used to generate source code [@Damyanov2004], compile-time verification [@Ernst2008], framework adaptation [@Guerra2010a], perform object-relational mapping \footnote\url{jcp.org/en/jsr/detail?id=220}, object-XML mapping (JAXB) and so forth.
-  
+The class structure might not be enough to allow a specific behavior or routine to be executed, and therefore additional metadata can be configured on the programming elements. Afterward, a framework or tool consumes them and executes the desired behavior. For instance, metadata can be used to generate source code [@Damyanov2004], compile-time verification [@Ernst2008], framework adaptation [@Guerra2010a], perform object-relational mapping [^1], object-XML mapping (JAXB) and so forth.
+
+[^1]:\url{jcp.org/en/jsr/detail?id=220}
+
 ```java
 @Entity
 @Table(name="Players")
