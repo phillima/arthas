@@ -43,8 +43,7 @@ The first version of this tool was previously presented and published on a works
 
 The term `metadata` is used in a variety of contexts in the computer science field. In all of them, it means data referring to the data itself. In databases, the data are the ones persisted, and the metadata is their description, i.e., the structure of the table. In the object-oriented context, the data are the instances, and the metadata is their description, i.e., information that describes the class. As such, fields, methods, super-classes, and interfaces are all metadata of a class instance. A class field, in turn, has its type, access modifiers, and name as its metadata [@guerra2014]. 
 
-Some programming languages provide features that allow custom metadata to be defined and included directly on programming elements. This feature is supported in languages such as Java, through the use of annotations and in C# #, by attributes. A benefit is that the metadata definition is closer to the programming element, and its definition is less verbose than external approaches. Annotations are a feature of the Java language, which became official on version 1.5. The code on Listing 1 presents a simple ```Player``` class using code annotation to perform object-relational mapping.
-
+Some programming languages provide features that allow custom metadata to be defined and included directly on programming elements. This feature is supported in languages such as Java, through the use of annotations and in C#, by attributes. A benefit is that the metadata definition is closer to the programming element, and its definition is less verbose than external approaches. Annotations are a feature of the Java language, which became official on version 1.5. The code on Listing 1 presents a simple ```Player``` class using code annotation to perform object-relational mapping.
 
 ```java
 @Entity
@@ -59,22 +58,20 @@ public class Player {
     
     @Column(name = "name")
     private String name;
-    
-    @Column(name = "birthdate", nullable = false)
-    private Date birthDate;
+  
     //getters and setters omitted
 }
 ```
 Listing 1: Code Annotations Example
 
-To map this ```Player``` class to a table in a database, to store the player's information, we need to pass in some `extra information` about these code elements. In other words, we need to define an object-relational mapping, and we need to configure which elements should be mapped to a column, table, and so forth. Using code annotations provided by the JPA API, this mapping is easily achieved. When this code gets executed, the framework consuming the annotations knows how to perform the expected behavior, which occurs as described below:
+To map this ```Player``` class to a table in a database, to store the player's information, we need to pass in some `extra information` about these code elements. In other words, we need to define an object-relational mapping, and we need to configure which elements should be mapped to a column, table, and so forth. Using code annotations provided by the JPA API, this mapping is easily achieved. When this code gets executed, the framework consuming the annotations knows how to perform the expected behavior. 
 
 Another important definition is that of an annotation schema [@LIMA2018], defined as a set of associated annotations that belong to the same API. The annotations used in the example code are part of the JPA schema. An annotation-based API usually uses a group of related annotations that represent the set of metadata necessary for its usage.
 
-
 # Annotation Metrics
 
-Our work in [@LIMA2018] proposed a novel suite of software metrics dedicated to code annotations. In this section we briefly describe them and demonstrate how they are calculated. We have three categories of metrics.
+Our work in [@LIMA2018] proposed a novel suite of software metrics dedicated to code annotations. In this section we briefly describe them and demonstrate how they are calculated. We have three categories of metrics:
+
 - Class Metric: Outputs one value per class.
 - Code Element Metric: Outputs one value per code element (fields, methods, etc.).
 - Annotation Metric: Outputs one value per code annotation.
