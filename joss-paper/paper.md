@@ -32,20 +32,19 @@ Enterprise Java frameworks and APIs such as JPA (Java Persistence API), Spring, 
 
 Source code metrics retrieve information from software to assess its characteristics. Well-known techniques use metrics associated with rules to detect bad smells on the source code [@Lanza2006]. However, traditional code metrics does not recognize code annotations on programming elements, which can lead to an incomplete code assessment [@Guerra2009]. For instance, a domain class can be considered simple using current complexity metrics. However, it can contain complex annotations for object-XML mapping. Also, using a set of annotations couples the application to a framework that can interpret them and current coupling metrics does not explicitly handle this.
 
-To automate the process of extracting the code annotation metrics proposed in [@LIMA2018], we developed an open source tool called Annotation Sniffier (ASniffer). It obtains the metrics values and outputs them in an XML report. The is run through the command line and requires three par
+To automate the process of extracting the novel code annotation metrics proposed in [@LIMA2018], we developed an open source tool called Annotation Sniffier (ASniffer). It obtains the metrics values and outputs them in an XML report. The is run through the command line and requires three par
 
 ![ASniffer Simple Diagram](figures/asniffer.png)
 Figure 1: ASniffer Simple Diagram
 
-The first version of this tool was previously presented and published on a workshop[@LIMA2018c]. The current version has an improved extensability mechanism as well as a more compact and complete report.
-
-
+The first version of this tool was previously presented and published on a workshop [@LIMA2018c]. The current version has an improved extensibility mechanism as well as a more compact and complete report, to support our ongoing research about code annotations and metadata in object-oriented programming.
 
 # Metadata and Code Annotations
 
-The term `metadata` is used in a variety of contexts in the computer science field. In all of them, it means data referring to the data itself. When discussing databases, the data are the ones persisted, and the metadata is their description, i.e., the structure of the table. In the object-oriented context, the data are the instances, and the metadata is their description, i.e., information that describes the class. As such, fields, methods, super-classes, and interfaces are all metadata of a class instance. A class field, in turn, has its type, access modifiers, and name as its metadata [@guerra2014]. 
+The term `metadata` is used in a variety of contexts in the computer science field. In all of them, it means data referring to the data itself. In databases, the data are the ones persisted, and the metadata is their description, i.e., the structure of the table. In the object-oriented context, the data are the instances, and the metadata is their description, i.e., information that describes the class. As such, fields, methods, super-classes, and interfaces are all metadata of a class instance. A class field, in turn, has its type, access modifiers, and name as its metadata [@guerra2014]. 
 
-The class structure might not be enough to allow a specific behavior or routine to be executed, and therefore additional metadata can be configured on the programming elements. Afterward, a framework or tool consumes them and executes the desired behavior. For instance, metadata can be used to generate source code, compile-time verification, framework adaptation [@Guerra2010a], perform object-relational mapping, object-XML mapping and so forth.
+The class structure might not be enough to allow a specific behavior or routine to be executed, and therefore additional metadata can be configured on the programming elements. Afterward, a framework or tool consumes them and executes the desired behavior. For instance, metadata can be used to generate source code [@Damyanov2004], compile-time verification [@Ernst2008], framework adaptation [@Guerra2010a], perform object-relational mapping \footnote\url{}, object-XML mapping (JAXB) and so forth.
+
   
 ```java
 @Entity
